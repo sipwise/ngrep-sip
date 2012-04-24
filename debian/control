@@ -1,0 +1,14 @@
+Source: ngrep-sip
+Section: net
+Priority: extra
+Maintainer: Sipwise Development Team <support@sipwise.com>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.3
+Homepage: http://sipwise.com/
+
+Package: ngrep-sip
+Architecture: all
+Depends: ${misc:Depends}, ngrep
+Description: capture SIP flow based on ngrep command
+ Simple wrapper script for ngrep which allows matching rules
+ based on SIP methods or custom message fields and pcap filters.

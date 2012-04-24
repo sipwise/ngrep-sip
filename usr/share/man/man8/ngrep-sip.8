@@ -1,0 +1,129 @@
+.TH NGREP-SIP 8 2008-12-24 "Linux" "User Manuals"
+.SH NAME
+ngrep-sip \- capture SIP flow based on ngrep command
+.PP
+.SH SYNOPSIS
+.B ngrep-sip
+[ \fIMATCH\fR ] [ \fIFILTER\fR ]
+.PP
+.SH DESCRIPTION
+Based on
+.BR ngrep (7),
+\fIngrep-sip\fR allows matching based on SIP methods or custom message fields and also defining \fIpcap\fR filters.
+.PP
+.SS MATCH
+Optional \fBMATCH\fR parameter can contain a special keyword or some text which must be present in the data.
+.PP
+The special keywords are:
+.TP
+\fBb\fR, \fBbasic\fR
+Capture transactions with SIP method INVITE, ACK, CANCEL, BYE, REFER, PRACK, INFO and MESSAGE.
+.TP
+\fBbr\fR, \fBrb\fR
+Some as \fBb\fR, \fBbasic\fR plus REGISTER method.
+.TP
+\fBr\fR
+Capture REGISTER transactions.
+.TP
+\fBp\fR
+Capture SUBSCRIBE, PUBLISH and NOTIFY transactions.
+.TP
+\fBpr\fR, \fBrp\fR
+Some as \fBp\fR plus REGISTER method.
+.TP
+\fB-o\fR
+Capture transactions with any method but OPTIONS.
+.TP
+\fB-or\fR, \fB-ro\fR
+Capture transactions with any method but OPTIONS or REGISTER.
+.PP
+Any other text can be used to set \fBMATCH\fR parameter. In this case that text will be required in the data being captured. It allows regular expressions. Examples:
+.TP
+666555444
+Capture all messages containing "666555444" text in headers or body.
+.TP
+"(123|124)@"
+Capture all messages containing "123@" or "124@" text in headers or body.
+.TP
+"^SIP/2.0 5"
+Capture all 5XX responses.
+.TP
+"^INVITE sip:111@"
+Capture all INVITE requests with RURI starting with "sip:111@".
+.PP
+.SS FILTER
+\fIpcap\fR filter. See below in "CONFIGURATION" - "filter" section.
+.PP
+.SH CONFIGURATION
+The script gets some parameters from \fI/etc/ngrep-sip.conf\fR file:
+.PP
+.SS interface
+Interface in which \fIngrep\fR must capture data. Possible values are \fIeth0\fR, \fIeth1\fR, \fIlo\fR, \fIany\fR. Use \fIany\fR to capture data in all the interfaces. Examples:
+.RS
+.nf
+interface=any
+interface=eth0
+.PP
+.SS filter
+\fIpcap\fR default filter. This parameter is overwritten when using \fBFILTER\fR parameter in command line. Examples:
+.RS
+.nf
+filter="port 5060 or port 5062 or port 5070 or port 6060"
+filter="host 1.2.3.4 and proto \\\\udp and \\( port 5060 or port 5070 \\)"
+filter="port 5060"
+.PP
+.SH EXAMPLES
+Capture all INVITE and MESSAGE related messages using default filter set in configuration file:
+.RS
+.nf
+\fBngrep-sip b\fP
+.fi
+.RE
+Capture all traffic using port 5060:
+.RS
+.nf
+\fBngrep-sip port 5060\fP
+.fi
+.RE
+Capture all REGISTER transactions via TCP using port 5060 or 5070 and address 1.2.3.4:
+.RS
+.nf
+\fBngrep-sip r proto \\\\tcp and \\( port 5060 or port 5070 \\) and host 1.2.3.4\fP
+.fi
+.RE
+Capture all UDP datagrams using port 5060 containing "sip:alice@domain" in the headers or body:
+.RS
+.nf
+\fBngrep-sip "sip:alice@domain" port 5060 and proto \\\\udp\fP
+.fi
+.RE
+Capture all 6XX responses from IP 1.2.3.4:
+.RS
+.nf
+\fBngrep-sip "^SIP/2.0 6" src host 1.2.3.4\fP
+.fi
+.RE
+.PP
+.SH NOTES
+\fIngrep-sip\fR can be also used to capture other kind of flow as SMTP or HTTP:
+.RS
+.nf
+\fBngrep-sip proto \\\\tcp and port 25\fP
+.fi
+.RE
+.PP
+.SH ISSUES
+When capturing TCP data a single TCP packet can contain various SIP messages. This occurs, for example, when a proxy routes all requests from different clients to same TCP destination. In those cases, the \fBmatch\fR is performed against the whole TCP packet instead of matching each SIP message separately.
+.PP
+.SH "SEE ALSO"
+.BR ngrep (8)
+.PP
+.SH AUTHOR
+Written by Iñaki Baz Castillo <ibc@aliax.net>
+.PP
+.SH COPYRIGHT
+Copyright \(co 2008 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

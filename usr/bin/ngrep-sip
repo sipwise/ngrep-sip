@@ -1,0 +1,78 @@
+#!/bin/bash
+
+
+conf_file="/etc/ngrep-sip.conf"
+
+# Default values.
+interface=any
+filter="port 5060"
+
+
+### Read conf file.
+if [ -f $conf_file ] ; then
+	. $conf_file
+else
+	echo "Warning: Conf file $conf_file not found!"
+fi
+
+
+### Functions.
+function show_help {
+	echo -e "Read the manual:\n  man ngrep-sip"
+}
+
+
+### Set parameter 1 as match rule (or show help).
+case $1 in
+
+-h|--help )
+	show_help
+	exit 0
+	;;
+
+basic|b )
+	match="(^|CSeq:\s?\d* )(INVITE|ACK|CANCEL|BYE|MESSAGE|REFER|PRACK|INFO|UPDATE)"
+	;;
+
+br|rb )
+	match="(^|CSeq:\s?\d* )(INVITE|ACK|CANCEL|BYE|MESSAGE|REFER|PRACK|INFO|UPDATE|REGISTER)"
+	;;
+
+r )
+	match="(^|CSeq:\s?\d* )(REGISTER)"
+	;;
+
+p )
+	match="(^|CSeq:\s?\d* )(SUBSCRIBE|PUBLISH|NOTIFY)"
+	;;
+
+pr|rp )
+	match="(^|CSeq:\s?\d* )(SUBSCRIBE|PUBLISH|NOTIFY|REGISTER)"
+	;;
+
+-o )
+	match="(^|CSeq:\s?\d* )(INVITE|ACK|CANCEL|BYE|MESSAGE|REFER|PRACK|INFO|UPDATE|SUBSCRIBE|PUBLISH|NOTIFY|REGISTER)"
+	;;
+
+-or|-ro )
+	match="(^|CSeq:\s?\d* )(INVITE|ACK|CANCEL|BYE|MESSAGE|REFER|PRACK|INFO|UPDATE|SUBSCRIBE|PUBLISH|NOTIFY)"
+	;;
+
+* )
+	match=$1
+	;;
+	
+esac
+
+
+### Set the rest of parameters as filter.
+shift
+if [ $# -ge 1 ] ; then
+	filter="$*"
+fi
+
+
+### Run ngrep command.
+ngrep -d $interface -P "'" -W byline -T -i -t "$match" $filter
+
+

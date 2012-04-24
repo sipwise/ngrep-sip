@@ -1,0 +1,9 @@
+ngrep-sip (1.0.3) unstable; urgency=low
+
+  * Initial release with new Debian packaging work and maintained within
+    the sip:provider project, based on
+    http://dev.sipdoc.net/projects/sip-stuff/wiki/Ngrep-SIP /
+    http://deb.sipdoc.net/pool/main/n/ngrep-sip/ngrep-sip_1.0.2-3_all.deb
+
+ -- Michael Prokop <mprokop@sipwise.com>  Tue, 03 Apr 2012 16:24:30 +0200
+
