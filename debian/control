@@ -8,7 +8,7 @@ Homepage: http://sipwise.com/
 
 Package: ngrep-sip
 Architecture: all
-Depends: ${misc:Depends}, ngrep
+Depends: ngrep, ${misc:Depends}
 Description: capture SIP flow based on ngrep command
  Simple wrapper script for ngrep which allows matching rules
  based on SIP methods or custom message fields and pcap filters.
