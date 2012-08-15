@@ -1,3 +1,9 @@
+ngrep-sip (1.0.4) unstable; urgency=low
+
+  * wrap and sort items in Debian packaging files 
+
+ -- Jon Bonilla <jbonilla@sipwise.com>  Wed, 15 Aug 2012 21:55:44 +0200
+
 ngrep-sip (1.0.3) unstable; urgency=low
 
   * Initial release with new Debian packaging work and maintained within
