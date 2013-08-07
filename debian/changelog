@@ -1,3 +1,10 @@
+ngrep-sip (1.0.5) unstable; urgency=low
+
+  [ Jon Bonilla ]
+  * Add -q as default parameter
+
+ -- Andrew Pogrebennyk <apogrebennyk@sipwise.com>  Wed, 07 Aug 2013 14:06:00 +0200
+
 ngrep-sip (1.0.4) unstable; urgency=low
 
   * wrap and sort items in Debian packaging files 

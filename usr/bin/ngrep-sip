@@ -73,6 +73,6 @@ fi
 
 
 ### Run ngrep command.
-ngrep -d $interface -P "'" -W byline -T -i -t "$match" $filter
+ngrep -d $interface -P "'" -W byline -T -i -t -q "$match" $filter
 
 
