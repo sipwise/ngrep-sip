@@ -1,8 +1,8 @@
-ngrep-sip (1.0.5+0~mr3.3) unstable; urgency=low
+ngrep-sip (1.1.0.0+0~mr3.3.0.0) unstable; urgency=low
 
   * New release.
 
- -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Sat, 01 Feb 2014 19:55:03 +0100
+ -- Alexander Lutay <alutay@sipwise.com>  Fri, 21 Mar 2014 15:37:05 +0100
 
 ngrep-sip (1.0.5) unstable; urgency=low
 
