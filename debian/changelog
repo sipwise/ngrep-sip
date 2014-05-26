@@ -1,3 +1,12 @@
+ngrep-sip (1.2.0.0+0~mr3.4.0.0) unstable; urgency=low
+
+  [ Michael Prokop ]
+  * [b661191] MT#6511 Bump Standards-Version to 3.9.5
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Mon, 26 May 2014 15:57:33 +0200
+
 ngrep-sip (1.1.0.0+0~mr3.3.0.0) unstable; urgency=low
 
   * New release.
