@@ -73,6 +73,7 @@ fi
 
 
 ### Run ngrep command.
+# shellcheck disable=SC2086
 ngrep -d $interface -P "'" -W byline -T -i -t -q "$match" $filter
 
 
