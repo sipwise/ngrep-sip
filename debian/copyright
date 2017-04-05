@@ -4,11 +4,13 @@ Upstream-Contact: Iñaki Baz Castillo <ibc@aliax.net>
 Source: http://dev.sipdoc.net/projects/sip-stuff/wiki/Ngrep-SIP
 
 Files: *
-Copyright: 2008, Iñaki Baz Castillo <ibc@aliax.net>
+Copyright:
+ Copyright © 2008 Iñaki Baz Castillo <ibc@aliax.net>
 License: GPL-3+
 
 Files: debian/*
-Copyright: 2012, Michael Prokop <mprokop@sipwise.com>
+Copyright:
+ Copyright © 2012-2017 Sipwise GmbH, Austria
 License: GPL-3+
 
 License: GPL-3+
