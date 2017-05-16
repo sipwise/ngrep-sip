@@ -1,3 +1,16 @@
+ngrep-sip (5.3.1.0+0~mr5.3.1.0) unstable; urgency=medium
+
+  [ Alexander Lutay ]
+  * [86bc61d] TT#12759 Suppress ngrep-sip shellcheck warning to mark repository as clean for tap-tests
+
+  [ Guillem Jover ]
+  * [7434460] TT#5420 Update packaging
+  * [fcd223f] TT#5420 Fix copyright notices
+
+  [ Sipwise Jenkins Builder ]
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Tue, 16 May 2017 21:42:35 +0200
+
 ngrep-sip (5.3.0.0+0~mr5.3.0.0) unstable; urgency=medium
 
   * New release.
