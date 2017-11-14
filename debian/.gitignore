@@ -1,5 +1,7 @@
+*.debhelper
 *.log
 *.substvars
+/.debhelper/
 /debhelper-build-stamp
 /files
 /ngrep-sip/
