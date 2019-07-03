@@ -5,7 +5,7 @@ Maintainer: Sipwise Development Team <support@sipwise.com>
 Standards-Version: 3.9.8
 Homepage: https://www.sipwise.com/
 Build-Depends:
- debhelper (>= 10),
+ debhelper-compat (= 12),
 
 Package: ngrep-sip
 Architecture: all
