@@ -1,3 +1,9 @@
+ngrep-sip (6.5.6.1+0~mr6.5.6.1) unstable; urgency=medium
+
+  * New release.
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Thu, 19 Sep 2019 18:03:01 +0200
+
 ngrep-sip (6.5.6.0+0~mr6.5.6.0) unstable; urgency=medium
 
   * New release.
