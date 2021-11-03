@@ -2,10 +2,10 @@ Source: ngrep-sip
 Section: net
 Priority: optional
 Maintainer: Sipwise Development Team <support@sipwise.com>
-Standards-Version: 3.9.8
+Standards-Version: 4.5.1
 Homepage: https://www.sipwise.com/
 Build-Depends:
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
 
 Package: ngrep-sip
 Architecture: all
