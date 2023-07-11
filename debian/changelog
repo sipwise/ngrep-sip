@@ -1,3 +1,9 @@
+ngrep-sip (11.4.2.0+0~mr11.4.2.0) unstable; urgency=medium
+
+  * New release.
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Tue, 11 Jul 2023 17:51:38 +0200
+
 ngrep-sip (11.4.1.0+0~mr11.4.1.0) unstable; urgency=medium
 
   * New release.
