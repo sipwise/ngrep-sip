@@ -10,6 +10,7 @@ filter="port 5060"
 
 ### Read conf file.
 if [ -f $conf_file ] ; then
+	# shellcheck source=./etc/ngrep-sip.conf
 	. $conf_file
 else
 	echo "Warning: Conf file $conf_file not found!"
