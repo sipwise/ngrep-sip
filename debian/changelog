@@ -1,3 +1,10 @@
+ngrep-sip (13.5.0.0+0~mr13.5.0.0) unstable; urgency=medium
+
+  [ Guillem Jover ]
+  * [17209e2] MT#62763 Fix shellcheck issues
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Fri, 20 Jun 2025 10:44:52 +0200
+
 ngrep-sip (13.4.0.0+0~mr13.4.0.0) unstable; urgency=medium
 
   * New release.
