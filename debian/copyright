@@ -3,14 +3,16 @@ Source: http://dev.sipdoc.net/projects/sip-stuff/wiki/Ngrep-SIP
 Upstream-Name: Ngrep-SIP
 Upstream-Contact: Iñaki Baz Castillo <ibc@aliax.net>
 
-Files: *
+Files:
+ *
 Copyright:
- Copyright © 2008 Iñaki Baz Castillo <ibc@aliax.net>
+ 2008 Iñaki Baz Castillo <ibc@aliax.net>
 License: GPL-3+
 
-Files: debian/*
+Files:
+ debian/*
 Copyright:
- Copyright © 2012-2023 Sipwise GmbH, Austria
+ 2012-2025 Sipwise GmbH, Austria
 License: GPL-3+
 
 License: GPL-3+
