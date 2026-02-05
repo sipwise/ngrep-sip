@@ -1,3 +1,10 @@
+ngrep-sip (14.2.0.0+0~mr14.2.0.0) unstable; urgency=medium
+
+  [ Guillem Jover ]
+  * [ba1e516] MT#62899 Update packaging for Debian trixie
+
+ -- Sipwise Jenkins Builder <jenkins@sipwise.com>  Thu, 05 Feb 2026 10:24:12 +0100
+
 ngrep-sip (14.1.0.0+0~mr14.1.0.0) unstable; urgency=medium
 
   * New release.
